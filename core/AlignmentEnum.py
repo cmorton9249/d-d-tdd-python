@@ -1,6 +1,5 @@
 from enum import Enum, unique
 
-
 @unique
 class AlignmentEnum(Enum):
     Unset = 0
