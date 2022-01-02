@@ -49,23 +49,4 @@ class CharacterTests(TestCase):
 
         assert attackRoll == 15
 
-    def test_character_knows_if_hit_high_roll(self):
-        self._systemUnderTest.armorClass = 1
 
-        result = self._systemUnderTest.isHit(11)
-
-        assert result == True
-
-    def test_character_knows_if_hit_same_roll(self):
-        self._systemUnderTest.armorClass = 11
-
-        result = self._systemUnderTest.isHit(11)
-
-        assert result == True
-
-    def test_character_knows_if_miss_low_roll(self):
-        self._systemUnderTest.armorClass = 20
-
-        result = self._systemUnderTest.isHit(11)
-
-        assert result == False

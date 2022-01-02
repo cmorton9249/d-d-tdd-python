@@ -41,6 +41,3 @@ class Character:
 
     def attack(self, die) -> int:
         return die.roll()
-
-    def isHit(self, attackRole: int) -> bool:
-        return attackRole >= self.armorClass
