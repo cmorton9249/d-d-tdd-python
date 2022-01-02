@@ -1,4 +1,5 @@
 from core.character import Character
+from core.die import Die
 
 
 class CombatResolver:
@@ -6,4 +7,5 @@ class CombatResolver:
         pass
 
     def resolveCombat(self, attacker: Character, defender: Character) -> None:
-        characterAttackRoll = attacker.attack()
+        die = Die()
+        characterAttackRoll = attacker.attack(die)

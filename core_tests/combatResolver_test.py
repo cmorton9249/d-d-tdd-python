@@ -11,7 +11,10 @@ class CombatResolverTests(TestCase):
         self._systemUnderTest = CombatResolver()
         return super().setUp()
 
-    def combatResolver_manages_attacks_between_two_parties(self):
-        self._systemUnderTest.ResolveCombat(self._attacker, self._defender)
+    def test_combatResolver_manages_attacks_between_two_parties(self):
+        self._systemUnderTest.resolveCombat(self._attacker, self._defender)
 
-        self._attacker.roll.assert_called_once()
+        self._attacker.attack.assert_called_once()
+
+    def test_combatResolver_determines_hits(self):
+        
