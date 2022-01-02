@@ -1,9 +1,10 @@
-import AlignmentEnum
+from AlignmentEnum import AlignmentEnum
 
 
 class Character:
-    __name__: str
-    __alignment__: AlignmentEnum
+    __name__: str = ""
+    __alignment__: AlignmentEnum = AlignmentEnum.Unset
+    __armorClass__: int = 10
 
     def setName(self, name: str):
         self.__name__ = name
@@ -16,3 +17,6 @@ class Character:
 
     def getAlignment(self) -> AlignmentEnum:
         return self.__alignment__
+
+    def getArmorClass(self) -> int:
+        return self.__armorClass__

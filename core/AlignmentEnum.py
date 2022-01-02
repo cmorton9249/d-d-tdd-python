@@ -3,6 +3,7 @@ from enum import Enum, unique
 
 @unique
 class AlignmentEnum(Enum):
-    Good = 0
-    Neutral = 1
-    Evil = 2
+    Unset = 0
+    Good = 1
+    Neutral = 2
+    Evil = 3

@@ -1,5 +1,5 @@
-from core.AlignmentEnum import AlignmentEnum
-from core.character import Character
+from AlignmentEnum import AlignmentEnum
+from character import Character
 
 
 def test_character_can_get_and_set_name():
@@ -28,3 +28,15 @@ def test_character_gets_an_alignment_evil():
     systemUnderTest.setAlignment(AlignmentEnum.Evil)
 
     assert systemUnderTest.getAlignment() is AlignmentEnum.Evil
+
+
+def test_character_gets_an_alignment_evil():
+    systemUnderTest = Character()
+
+    assert systemUnderTest.getAlignment() is AlignmentEnum.Unset
+
+
+def test_character_has_AC_Default_10():
+    systemUnderTest = Character()
+
+    assert systemUnderTest.getArmorClass() == 10
