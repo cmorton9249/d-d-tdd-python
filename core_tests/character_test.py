@@ -48,5 +48,3 @@ class CharacterTests(TestCase):
         attackRoll = self._systemUnderTest.attack(mockDie)
 
         assert attackRoll == 15
-
-

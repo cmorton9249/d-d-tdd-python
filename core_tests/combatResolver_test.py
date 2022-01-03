@@ -2,18 +2,21 @@ from unittest import TestCase
 from core.character import Character
 from core.combatResolver import CombatResolver
 from core.die import Die
-from unittest.mock import Mock
+from unittest.mock import MagicMock, PropertyMock
 
 
 class CombatResolverTests(TestCase):
     def setUp(self) -> None:
-        self._attacker = Mock(wraps=Character())
-        self._defender = Mock(wraps=Character())
-        mockDie = Mock(wraps=Die())
+        self._attacker = MagicMock(wraps=Character())
+        self._defender = MagicMock(wraps=Character())
+        mockDie = MagicMock(wraps=Die())
         self._systemUnderTest = CombatResolver(mockDie)
         return super().setUp()
 
     def test_combatResolver_manages_attacks_between_two_parties(self):
+        type(self._defender).armorClass = PropertyMock(return_value=0)
+        self._systemUnderTest._die.roll.return_value = 0
+
         self._systemUnderTest.resolveCombat(self._attacker, self._defender)
 
         self._attacker.attack.assert_called_once()

@@ -10,34 +10,37 @@ class Character:
         self._armorClass = armorClass
         self._hitpoints = hitpoints
 
-    def get_name(self):
+    @property
+    def name(self) -> str:
         return self._name
 
-    def set_name(self, value: str):
+    @name.setter
+    def name(self, value: str) -> None:
         self._name = value
 
-    def get_alignment(self) -> AlignmentEnum:
+    @property
+    def alignment(self) -> AlignmentEnum:
         return self._alignment
 
-    def set_alignment(self, value: AlignmentEnum):
+    @alignment.setter
+    def alignment(self, value: AlignmentEnum) -> None:
         self._alignment = value
 
-    def get_armorClass(self) -> int:
+    @property
+    def armorClass(self) -> int:
         return self._armorClass
 
-    def set_armorClass(self, value):
+    @armorClass.setter
+    def armorClass(self, value) -> None:
         self._armorClass = value
 
-    def get_hitpoints(self) -> int:
+    @property
+    def hitpoints(self) -> int:
         return self._hitpoints
 
-    def set_hitpoints(self, value: int):
+    @hitpoints.setter
+    def hitpoints(self, value: int) -> None:
         self._hitpoints = value
-
-    name = property(get_name, set_name)
-    alignment = property(get_alignment, set_alignment)
-    armorClass = property(get_armorClass, set_armorClass)
-    hitpoints = property(get_hitpoints, set_hitpoints)
 
     def attack(self, die) -> int:
         return die.roll()
